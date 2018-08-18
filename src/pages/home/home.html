@@ -10,28 +10,28 @@
   <button ion-button block color='primary' (click)='add()'>
     Add
   </button>
-    <ion-list>
-      <ion-item *ngFor='let location of lists'>
-        <h2>{{ location.name }}</h2>
-        <p>
-          Name: {{ location.name}}
-          <br> Birthplace: {{ location.birthplace }}
-          <br> Highest Level of Education: {{location.education}}
-          <br> Age: {{location.age}}
-          <br> Hobbies: {{location.hobbies}}
-          <br> Occupation: {{location.occupation}}
-          <br> Favorite Color: {{location.favColor}}
-          <br> Personal Strengths: {{location.personalS}}
-          <br> Personal Weaknesses: {{location.personalW}}
-        </p>
+  <ion-list>
+    <ion-item *ngFor='let location of lists'>
+      <h2>{{ location.name }}</h2>
+      <p>
+        Name: {{ location.name}}
+        <br> Birthplace: {{ location.birthplace }}
+        <br> Highest Level of Education: {{location.education}}
+        <br> Age: {{location.age}}
+        <br> Hobbies: {{location.hobbies}}
+        <br> Occupation: {{location.occupation}}
+        <br> Favorite Color: {{location.favColor}}
+        <br> Personal Strengths: {{location.personalS}}
+        <br> Personal Weaknesses: {{location.personalW}}
+      </p>
 
-        <button ion-button color='secondary' (click)='update(location)'>
-          Update
-        </button>
+      <button ion-button color='secondary' (click)='update(location)'>
+        Update
+      </button>
 
-        <button ion-button color='danger' (click)="delete(location)">
-          Delete
-        </button>
-      </ion-item>
-    </ion-list>
+      <button ion-button color='danger' (click)="delete(location)">
+        Delete
+      </button>
+    </ion-item>
+  </ion-list>
 </ion-content>

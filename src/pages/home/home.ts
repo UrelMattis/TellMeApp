@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
+import { ManagePage } from '../manage/manage';
 
 @Component({
   selector: 'page-home',
@@ -23,7 +24,7 @@ export class HomePage {
       age: "23",
       hobbies: "Basketball, Football, Computer Programming",
       occupation: "Software Developer",
-      favColor:"Blue",
+      favColor: "Blue",
       personalS: "Hardworking",
       personalW: "Too hard on myself"
     };
@@ -58,7 +59,7 @@ export class HomePage {
   }
 
   add(): void {
-    this.navCtrl.push(ManageDocumentPage);
+    this.navCtrl.push(ManagePage);
   }
 
   update(obj): void {
@@ -66,7 +67,7 @@ export class HomePage {
       collection: this.collection,
       location: obj
     };
-    this.navCtrl.push(ManageDocumentPage,
+    this.navCtrl.push(ManagePage,
       {
         record: params,
         isEdited: true
@@ -98,6 +99,4 @@ export class HomePage {
     });
     alert.present();
   }
-  }
-
 }
