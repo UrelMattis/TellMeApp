@@ -1,14 +1,37 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Tell Me About Yourself
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-button block color='primary' (click)='add()'>
+    Add
+  </button>
+    <ion-list>
+      <ion-item *ngFor='let location of lists'>
+        <h2>{{ location.name }}</h2>
+        <p>
+          Name: {{ location.name}}
+          <br> Birthplace: {{ location.birthplace }}
+          <br> Highest Level of Education: {{location.education}}
+          <br> Age: {{location.age}}
+          <br> Hobbies: {{location.hobbies}}
+          <br> Occupation: {{location.occupation}}
+          <br> Favorite Color: {{location.favColor}}
+          <br> Personal Strengths: {{location.personalS}}
+          <br> Personal Weaknesses: {{location.personalW}}
+        </p>
+
+        <button ion-button color='secondary' (click)='update(location)'>
+          Update
+        </button>
+
+        <button ion-button color='danger' (click)="delete(location)">
+          Delete
+        </button>
+      </ion-item>
+    </ion-list>
 </ion-content>
