@@ -1,0 +1,77 @@
+<!--
+  Generated template for the AccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="bg">
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 60%">
+      <h1 ion-text class="text-primary">
+        <strong>Edit Your Profile</strong>
+      </h1>
+      <ion-card>
+        <form novalidate (ngSubmit)="createAccount(account)" [formGroup]="accountForm">
+
+          <ion-item>
+            <ion-label floating ion-text color="dark">Username</ion-label>
+            <ion-input [(ngModel)]="account.username" formControlName="username" [class.error1]="!accountForm.controls.username.valid && accountForm.controls.username.dirty"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines *ngIf="( accountForm.get('username').hasError('minlength') || accountForm.get('username').hasError('maxlength') ||accountForm.get('username').hasError('pattern') ||accountForm.get('username').hasError('required') ) && accountForm.get('username').touched">
+            <div *ngIf="accountForm.get('username').hasError('required') && accountForm.get('username').touched">
+              Please input your display name
+            </div>
+            <div *ngIf="accountForm.get('username').hasError('minlength') && accountForm.get('username').touched">
+              Minimum 4 characters
+            </div>
+            <div *ngIf="accountForm.get('username').hasError('maxlength') && accountForm.get('username').touched">
+              Maximum 19 characters
+            </div>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating ion-text color="dark">First Name</ion-label>
+            <ion-input [(ngModel)]="account.firstName" formControlName="firstName" [class.error1]="!accountForm.controls.firstName.valid && accountForm.controls.firstName.dirty"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines *ngIf="( accountForm.get('firstName').hasError('minlength') || accountForm.get('firstName').hasError('maxlength') ||accountForm.get('firstName').hasError('pattern') ||accountForm.get('firstName').hasError('required') ) && accountForm.get('firstName').touched">
+            <div *ngIf="accountForm.get('firstName').hasError('required') && accountForm.get('firstName').touched">
+              Please input your first name
+            </div>
+            <div *ngIf="accountForm.get('firstName').hasError('minlength') && accountForm.get('firstName').touched">
+              Minimum 4 characters
+            </div>
+            <div *ngIf="accountForm.get('firstName').hasError('maxlength') && accountForm.get('firstName').touched">
+              Maximum 15 characters
+            </div>
+            <div *ngIf="accountForm.get('firstName').hasError('pattern') && accountForm.get('firstName').touched">
+              Please use a valid character
+            </div>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating ion-text color="dark">Last Name</ion-label>
+            <ion-input [(ngModel)]="account.lastName" formControlName="lastName" [class.error1]="!accountForm.controls.lastName.valid && accountForm.controls.lastName.dirty"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines *ngIf="( accountForm.get('lastName').hasError('minlength') || accountForm.get('lastName').hasError('maxlength') ||accountForm.get('lastName').hasError('pattern') ||accountForm.get('lastName').hasError('required') ) && accountForm.get('lastName').touched">
+            <div *ngIf="accountForm.get('lastName').hasError('required') && accountForm.get('lastName').touched">
+              Please input your last name
+            </div>
+            <div *ngIf="accountForm.get('lastName').hasError('minlength') && accountForm.get('lastName').touched">
+              Minimum 4 characters
+            </div>
+            <div *ngIf="accountForm.get('lastName').hasError('maxlength') && accountForm.get('lastName').touched">
+              Maximum 30 characters
+            </div>
+            <div *ngIf="accountForm.get('lastName').hasError('pattern') && accountForm.get('lastName').touched">
+              Please use a valid character
+            </div>
+          </ion-item>
+          <button type="submit" ion-button block color="dark" [disabled]="accountForm.invalid">Create Account</button>
+        </form>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>
