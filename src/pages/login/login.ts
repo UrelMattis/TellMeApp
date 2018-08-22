@@ -26,13 +26,13 @@ export class LoginPage {
   usernameID: string;
 
   //inject firebase authentification
-  constructor(private alertCtrl: AlertController, 
-    private fire: AngularFireAuth, 
-    public navCtrl: NavController, 
+  constructor(private alertCtrl: AlertController,
+    private fire: AngularFireAuth,
+    public navCtrl: NavController,
     public navParams: NavParams,
     public menu: MenuController) {
-    
-      this.menu.swipeEnable(false);
+
+    this.menu.swipeEnable(false);
   }
 
   //alert message relaying that the user has logged in successfully

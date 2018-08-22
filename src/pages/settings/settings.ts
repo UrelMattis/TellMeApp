@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, normalizeURL, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, normalizeURL, AlertController, Nav } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -8,6 +8,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
 import { FbService } from '../../services/firebase.service';
 import { EditProfilePage } from '../edit-profile/edit-profile';
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the SettingsPage page.
  *
@@ -21,6 +22,7 @@ import { EditProfilePage } from '../edit-profile/edit-profile';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
+  //@ViewChild(Nav) nav: Nav;
   usernameStorage: string;
   userID: string;
   username: string;
@@ -30,7 +32,9 @@ export class SettingsPage {
   lnHolder: string;
   email: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fire: AngularFireAuth) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private fire: AngularFireAuth) {
     console.log(this.fire.auth.currentUser);
     this.userID = fire.auth.currentUser.uid;
     var ref = firebase.database().ref(`account/users/${this.userID}`);
@@ -54,7 +58,13 @@ export class SettingsPage {
     if (!params) params = {};
     this.navCtrl.push(EditProfilePage);
   }
-
+  //pushes the application back to the Pre Log In page
+  logOut() {
+    this.fire.auth.signOut().then(res => {
+      this.navCtrl.setRoot(LoginPage);
+    })
+    this.navCtrl.setRoot(LoginPage);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyProfilePage');
   }

@@ -24,9 +24,9 @@ export class EditProfilePage {
   @ViewChild('confirmPassChange') confirmPassChange;
   userID = this.fire.auth.currentUser.uid;
 
-  constructor(public navCtrl: NavController, 
-    public navParams: NavParams, 
-    private alertCtrl: AlertController, 
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
     private fire: AngularFireAuth) {
     console.log(this.fire.auth.currentUser);
   }

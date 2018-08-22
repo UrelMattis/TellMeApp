@@ -12,7 +12,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, 
     statusBar: StatusBar, 

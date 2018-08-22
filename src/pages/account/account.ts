@@ -51,7 +51,6 @@ export class AccountPage implements OnInit {
         .then(() => this.navCtrl.setRoot(HomePage));
     })
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
   }
