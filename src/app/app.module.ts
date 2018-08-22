@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,6 +17,12 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../config/credentials';
+import { SettingsPage } from '../pages/settings/settings';
+import { AuthService } from '../services/auth.service';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Crop } from '@ionic-native/crop';
+import { FbService } from '../services/firebase.service';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,10 @@ import { environment } from '../config/credentials';
     LoginPage,
     RegisterPage,
     AccountPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    SettingsPage,
+    EditProfilePage
+    
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,9 @@ import { environment } from '../config/credentials';
     LoginPage,
     RegisterPage,
     AccountPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    SettingsPage,
+    EditProfilePage
   ],
   providers: [
     StatusBar,
@@ -53,7 +64,13 @@ import { environment } from '../config/credentials';
     DatabaseProvider,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFireDatabase
-  ]
+    AngularFireDatabase,
+    AuthService,
+    ImagePicker,
+    Crop,
+    FbService
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+
 })
 export class AppModule {}

@@ -1,0 +1,45 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="">
+    <ion-title>Account Info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg" padding>
+  <div class="card">
+    <ion-card-header>
+      <strong>Account Information</strong>
+    </ion-card-header>
+    <hr color="gray">
+
+    <!-- User Profile Information -->
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="ios-person" color="gray"></ion-icon>
+          <ion-note item-right ion-text color="dark">{{usernameStorage}}</ion-note>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <ion-icon name="ios-people" color="gray"></ion-icon>
+          <ion-note item-right ion-text color="dark">{{fNHolder}} {{lnHolder}}</ion-note>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <ion-icon name="ios-mail" color="gray"></ion-icon>
+          <ion-note item-right ion-text color="dark">{{email}}</ion-note>
+        </ion-label>
+      </ion-item>
+      <button (click) = "goToEditProfile()" ion-button round outline>Update Profile</button>
+    </ion-list>
+  </div>
+</ion-content>

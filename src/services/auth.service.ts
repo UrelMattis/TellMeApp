@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import AuthProvider = firebase.auth.AuthProvider;
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthService {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
 import { ManagePage } from '../manage/manage';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-home',
@@ -98,5 +99,9 @@ export class HomePage {
       }]
     });
     alert.present();
+  }
+
+  openSettings(){
+    this.navCtrl.push(SettingsPage);
   }
 }
