@@ -16,7 +16,7 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
   pages: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public platform: Platform,
