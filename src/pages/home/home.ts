@@ -100,8 +100,4 @@ export class HomePage {
     });
     alert.present();
   }
-
-  openSettings(){
-    this.navCtrl.push(SettingsPage);
-  }
 }

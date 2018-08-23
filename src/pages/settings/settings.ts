@@ -54,17 +54,7 @@ export class SettingsPage {
     });
     this.email = fire.auth.currentUser.email;
   }
-  goToEditProfile(params) {
-    if (!params) params = {};
-    this.navCtrl.push(EditProfilePage);
-  }
-  //pushes the application back to the Pre Log In page
-  logOut() {
-    this.fire.auth.signOut().then(res => {
-      this.navCtrl.setRoot(LoginPage);
-    })
-    this.navCtrl.setRoot(LoginPage);
-  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyProfilePage');
   }

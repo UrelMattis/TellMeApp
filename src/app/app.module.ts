@@ -23,6 +23,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
 import { FbService } from '../services/firebase.service';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { UsersPage } from '../pages/users/users';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,8 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
     AccountPage,
     ForgotPasswordPage,
     SettingsPage,
-    EditProfilePage
-    
+    EditProfilePage,
+    UsersPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
     AccountPage,
     ForgotPasswordPage,
     SettingsPage,
-    EditProfilePage
+    EditProfilePage,
+    UsersPage
   ],
   providers: [
     StatusBar,
