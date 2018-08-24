@@ -1,3 +1,15 @@
 page-settings {
-
+    .circle-pic{
+        height: 50vw; 
+        width: 50vw; 
+       border: 2px solid #fff;
+       border-radius: 50%;
+       box-shadow: 0 0 5px gray;
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       }
+       .btncenter{
+           text-align: center
+       }
 }

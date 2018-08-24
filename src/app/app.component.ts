@@ -16,7 +16,7 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = LoginPage;
+  rootPage: any = LoginPage;
   pages: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public platform: Platform,
@@ -45,9 +45,9 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-  openSettings(params){
+  openSettings(params) {
     if (!params) params = {};
-    this.nav.push(SettingsPage);  
+    this.nav.push(SettingsPage);
   }
   logOut() {
     this.fire.auth.signOut().then(res => {

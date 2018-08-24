@@ -11,7 +11,7 @@ export class AuthService {
 	private businessListref = this.db.list<Account>('list');
 
 	constructor(public afAuth: AngularFireAuth,
-	private db: AngularFireDatabase) {
+		private db: AngularFireDatabase) {
 		afAuth.authState.subscribe(user => {
 			this.user = user;
 		});
@@ -21,5 +21,5 @@ export class AuthService {
 	}
 	getBusinessList() {
 		return this.businessListref;
-	  }
+	}
 }

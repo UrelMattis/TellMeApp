@@ -14,3 +14,15 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.circle-pic{
+    height: 20vw; 
+    width: 20vw; 
+   border: 2px solid #fff;
+   border-radius: 50%;
+   box-shadow: 0 0 5px gray;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   //text-align: center;
+   //width: 40%;
+   }

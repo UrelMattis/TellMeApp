@@ -21,9 +21,9 @@ import { SettingsPage } from '../pages/settings/settings';
 import { AuthService } from '../services/auth.service';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
-import { FbService } from '../services/firebase.service';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { UsersPage } from '../pages/users/users';
+import { FirebaseImageService } from '../services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,8 @@ import { UsersPage } from '../pages/users/users';
     AuthService,
     ImagePicker,
     Crop,
-    FbService
+    FirebaseImageService
+    
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
