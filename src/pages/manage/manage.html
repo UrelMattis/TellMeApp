@@ -1,0 +1,72 @@
+<!--
+  Generated template for the ManagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]='form' (ngSubmit)='saveDocument(form.value)'>
+    <ion-item>
+      <ion-label stacked>Name:</ion-label>
+      <ion-input type='text' formControlName='name' [(ngModel)]='name'>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Birthplace:</ion-label>
+      <ion-input type="text" formControlName="birthplace" [(ngModel)]="birthplace"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Highest Level of Education:</ion-label>
+      <ion-input type="text" formControlName="education" [(ngModel)]="education"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Age:</ion-label>
+      <ion-input type="text" formControlName="age" [(ngModel)]="age"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Hobbies:</ion-label>
+      <ion-input type="text" formControlName="hobbies" [(ngModel)]="hobbies"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Occupation:</ion-label>
+      <ion-input type="text" formControlName="occupation" [(ngModel)]="occupation"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Favorite Color:</ion-label>
+      <ion-input type="text" formControlName="favColor" [(ngModel)]="favColor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Personal Strength:</ion-label>
+      <ion-input type="text" formControlName="personalS" [(ngModel)]="personalS"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Personal Weakness:</ion-label>
+      <ion-input type="text" formControlName="personalW" [(ngModel)]="personalW"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block color="primary" text-center padding-top padding-bottom [disabled]="!form.valid">
+        <div *ngIf="!isEditable">
+          Add
+        </div>
+        <div *ngIf="isEditable">
+          Update
+        </div>
+      </button>
+    </ion-item>
+  </form>
+</ion-content>
